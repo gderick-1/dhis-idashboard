@@ -16,7 +16,7 @@ var mapManager = {
     originalAnalytics:{},
     period:null,
     legendSet:{legend:{}},
-    dasboardId:null,
+    dashboardId:null,
     getOrganisationUnits:function(){
         var thematicLayerOne = mapManager.thematicLayers[0]
         mapManager.getPeriod(thematicLayerOne);

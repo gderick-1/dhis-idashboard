@@ -11,7 +11,7 @@ filterService.factory('filtersManager',['$q','$http','$filter',function($q,$http
         icons: [
             {name: 'table', image: 'table.jpg', action: ''},
             {name: 'chart.column', image: 'bar.png', action: ''},
-<<<<<<< HEAD
+
             {name: 'map', image: 'map.jpg', action: ''}
         ],
         chartIcons:[
@@ -29,8 +29,7 @@ filterService.factory('filtersManager',['$q','$http','$filter',function($q,$http
         zoomIcons: [
             {name: 'table', image: 'table.jpg', action: ''},
             {name: 'chart.column', image: 'bar.png', action: ''},
-=======
->>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
+
             {name: 'chart.line', image: 'line.png', action: ''},
             {name: 'chart.combined', image: 'combined.jpg', action: ''},
             {name: 'chart.bar', image: 'column.png', action: ''},

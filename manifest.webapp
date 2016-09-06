@@ -15,7 +15,11 @@
     "default_locale": "en",
     "activities": {
         "dhis": {
+<<<<<<< HEAD
             "href": "../../.."
+=======
+            "href": "../../"
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
         }
     }
 }

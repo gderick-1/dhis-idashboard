@@ -3,8 +3,12 @@
                                  || dashboardItem.type=='USERS'
                                  || dashboardItem.type=='MESSAGES'
                                  || dashboardItem.type=='APP' "
+<<<<<<< HEAD
    ng-click="updateSingleDashboard(dashboardItem,'interpretation')"
 
+=======
+   href='javascript:dhis2.db.viewShareForm( "{{ dashboardItem.id }}", "{{ dashboardItem.type | lowercase }}", "{{ dashboardItem.name }}" )'
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
    style="cursor: pointer">Share interpretation </a>
 <a ng-hide="dashboardItem.type=='RESOURCES'
                                  || dashboardItem.type=='REPORTS'

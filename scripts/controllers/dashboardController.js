@@ -54,8 +54,11 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
         $scope.tableRowDimension = [];
         $scope.tableOneDimensionBoth = [];
         $scope.icons = filtersManager.icons;
+<<<<<<< HEAD
         $scope.chartIcons = filtersManager.chartIcons;
         $scope.zoomIcons = filtersManager.zoomIcons;
+=======
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
         $scope.multiPeriod = true;
 
         var d = new Date();
@@ -237,6 +240,7 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
             return name;
         };
 
+<<<<<<< HEAD
         //get dashboard interpretations
         $scope.getInterpretations = function(dashboard){
             var name = "";
@@ -315,6 +319,8 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
             return name;
         };
 
+=======
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
         $scope.promises = [];
 
         $scope.column=[];
@@ -1197,6 +1203,11 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
 
         };
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
         //update the dashboard according to the filters
         $scope.updateSingleDashboard = function(dashboardItem,chartType){
 
@@ -1317,6 +1328,7 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
                     dashboardItem.errorMessage=JSON.stringify(error);
                 });
             }
+<<<<<<< HEAD
             else if(dashboardItem.currentVisualization=='interpretation'){
                 dashboardItem.column_size = 'col-md-12';
                 dashboardItem.laodingInterpetation =  true;
@@ -1325,6 +1337,8 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
                     dashboardItem.laodingInterpetation =  false;
                 })
             }
+=======
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
             else{
 
                 if(mapManager.originalAnalytics.headers){
@@ -1388,6 +1402,7 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
                 });
             }
 
+<<<<<<< HEAD
         };
 
         //saving interpration comment
@@ -1429,6 +1444,9 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
                 console.log(error);
             });
         };
+=======
+        }
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
 
         //update the dashboard charts according to layout selection
         $scope.updateChartLayout = function(dashboardItem,chartType,xAxis,yAxis) {
@@ -1439,7 +1457,11 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
             $scope.dashboardLoader[dashboardItem.id] = true;
             $scope.dashboardChart[dashboardItem.id] = chartsManager.drawChart($scope.dashboardAnalytics[dashboardItem.id], xAxis, [], yAxis, [], 'none', '', dashboardItem.object.name, chartType)
             $scope.dashboardLoader[dashboardItem.id] = false;
+<<<<<<< HEAD
         };
+=======
+        }
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
 
         //update the dashboard charts according to layout selection
         $scope.updateChartDataSelection = function(dashboardItem,chartType,xAxis,yAxis,xAxisItems,yAxisItems) {

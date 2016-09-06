@@ -22,7 +22,15 @@ module.exports = function(config) {
 		browsers     : ["Chrome"],
 		singleRun    : false,
 		proxies   : {
+<<<<<<< HEAD
 			"/": "http://localhost:8000/"
+=======
+<<<<<<< HEAD
+			"/": "http://localhost:8080/"
+=======
+			"/": "http://localhost:8000/"
+>>>>>>> 358204589577050fc244462fbc6203dfe291bff9
+>>>>>>> 42ac29156284ed66f13c6c2b5a175244bf396642
 		}
 	});
 };

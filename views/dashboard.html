@@ -4,18 +4,50 @@
     </div>
     <div ng-if="!loading" class="row">
 
-        <div class="col-sm-2" style="padding-right: 0px" ng-if="!$root.filtersHidden">
+        <div class="col-sm-2 center" style="padding-right: 0px" ng-if="!$root.filtersHidden">
             <ul class="list-group">
 
 
                 <li class="list-group-item">
 
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default">Add</button>
-                        <button type="button" class="btn btn-default">Manage</button>
-
+                        <button type="button" class="btn btn-default btn-sm" ng-click="newDashboardFunction('add')">Add</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="newDashboardFunction('edit')">Rename</button>
+                        <button type="button" class="btn btn-default btn-sm" ng-click="newDashboardFunction()">Share</button>
                     </div>
 
+                </li>
+
+                <li class="list-group-item" ng-if="!addHidden">
+                    <form class="form-inline" ng-submit="addDashboard()">
+                        <div class="form-group">
+                            <p for="" class="text-center"><strong>Add new dashboard</strong></p>
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" placeholder="put name of new dashboard here" ng-model="createData.name">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-default btn-sm btn-block"><span class="glyphicon glyphicon-plus"></span></button>
+                                        <!--span class="glyphicon glyphicon-plus"></span> </button>-->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+
+                <li class="list-group-item" ng-if="!editHidden">
+                    <form action="" ng-submit="renameDashboard($root.dashName)">
+                        <div class="form-group">
+                            <p for="" class="text-center"><strong>Rename dashboard</strong></p>
+                            <div class="input-group">
+                                <input type="text" class="form-control input-sm" ng-model="$root.dashName">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-warning btn-sm btn-block">
+                                        <span class="glyphicon glyphicon-edit"></span> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <button class="btn btn-danger btn-block"  ng-click="deleteDashboard()">delete</button>
                 </li>
 
                 <!--period type-->

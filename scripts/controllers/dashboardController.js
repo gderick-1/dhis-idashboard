@@ -1,6 +1,6 @@
 var dashboardController  = angular.module('dashboardController',[]);
 dashboardController.controller('DashboardController',['$scope','$rootScope','$resource','dashboardsManager','dashboardItemsManager',
-    '$routeParams','$timeout','$translate','Paginator','ContextMenuSelectedItem',
+    '$routeParams','$timeout','$translate','Paginator','ContextMenuSelectedItem','$location',
     '$filter','$http','CustomFormService','DHIS2URL', 'olHelpers',
     'olData','mapManager','chartsManager','TableRenderer','filtersManager','$localStorage','$sessionStorage','$q',function(
                         $scope,
@@ -10,6 +10,7 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
                         dashboardItemsManager,
                         $routeParams,
                         $timeout,
+                        $location,
                         $translate,
                         Paginator,
                         ContextMenuSelectedItem,
@@ -59,6 +60,10 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
         $scope.zoomIcons = filtersManager.zoomIcons;
 
         $scope.multiPeriod = true;
+
+        $scope.addHidden = true;
+        $scope.editHidden = true;
+
 
         var d = new Date();
         //default filter values
@@ -1528,6 +1533,29 @@ dashboardController.controller('DashboardController',['$scope','$rootScope','$re
         };
         $scope.singleDashboardDetails=function(dashboardItem,type){
 
+        };
+        $scope.newDashboardFunction = function (values) {
+            if (values == 'add'){
+                $scope.addHidden = false;
+                $scope.editHidden = true;
+            } else if (values == 'edit'){
+                $scope.addHidden = true;
+                $scope.editHidden = false;
+            }  else {
+                $scope.addHidden = true;
+                $scope.editHidden = true;
+            }
+        }
+
+        $scope.addDashboardData = {};
+        $scope.addDashboard = function(){
+            $http.post('../../../api/dashboards/',$scope.addDashboardData).then(function (results) {
+                console.log(results);
+
+                $scope.addDashboardData = {};
+                var location = results.headers('Location');
+                $location.path(location+ '/dashboard');
+            })
         }
     }]);
 
